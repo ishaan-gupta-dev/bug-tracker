@@ -39,7 +39,7 @@ npm start
 
 Hosted on
 
-
+https://bug-tracker-uz6y.onrender.com/
 
 ## Tech Stack
 
