@@ -1,0 +1,42 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary m-2" style="
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-font-size: 1rem;
+" data-bs-toggle="modal" data-bs-target="#search-bugs-modal">
+  Search Bugs
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="search-bugs-modal" tabindex="-1" aria-labelledby="search-bugs-modal-header" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="search-bugs-modal-header">Search Bugs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form action="/" method="get" id="search-bugs-form">
+        <div class="row mb-3 m-auto mt-3">
+          <label for="titlelabel" class="col-sm-4 col-form-label">Search by Title</label>
+          <div class="col-sm-8">
+            <input type="text" name="title" placeholder="Bug title to be searched"  class="form-control" id="titlelabel" />
+          </div>
+        </div>
+        <div class="row mb-3 m-auto">
+          <label for="descriptionlabel" class="col-sm-4 col-form-label">Search by Description</label>
+          <div class="col-sm-8">
+            <textarea name="description" placeholder="Bug Description to be searched"  class="form-control" id="descriptionlabel" style="height: 100px"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary" onclick="flashMessageForSearch()">
+            Search Bugs
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="/js/searchBugs.js"></script>

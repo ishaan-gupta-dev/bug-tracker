@@ -1,0 +1,24 @@
+<div class="mb-5 p-5 home-body">
+  <% for( let project of projects ) { %>
+  <div class="card mb-2 w-50 m-auto text-bg-dark">
+    <div class="card-header d-flex justify-content-start">
+      <div class="flex-fill"><strong> Name of the project : </strong><%= project.name %></div>
+      <div><strong> Author : </strong><%= project.author %></div>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong> Description : </strong><%= project.description %>
+      </p>
+
+      <div class="m-auto row justify-content-between">
+        <div class="col-8">
+          <a href="/project/delete/<%=project._id%>" class="btn btn-danger m-auto">Delete Project</a>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+          <a href="/project/<%=project._id%>" class="btn btn-info ">Show bugs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

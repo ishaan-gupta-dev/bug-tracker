@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-end">
+  <%-include('./partials/_filter_bugs_modal'); %>
+  <%-include('./partials/_search_bugs_modal'); %>
+</div>
+<table class="table table-dark table-striped table-hover table-bordered" id="bugs-list-table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Reported By</th>
+      <th scope="col">Due Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Severity</th>
+    </tr>
+  </thead>
+  <tbody id="table-body-id">
+    <% for(let bug of project.bugs) { %>
+    <tr>
+      <th scope="row"><%= bug.title %>
+        <div class="d-flex justify-content-start" id="labels-div-<%=bug._id%> ">
+          <% for(let label of bug.labels) { %>
+          <h6 class="badge text-bg-info m-1"><%= label%></h6>
+          <% } %>
+        </div>
+      </th>
+      <td> <%= bug.description %></td>
+      <td> <%= bug.reported_by %></td>
+      <td> <%= bug.due_date %></td>
+      <td>
+        <h4><span class="badge rounded-pill status"><%= bug.status %> </span></h4>
+      </td>
+      <td>
+        <h4> <span class="badge rounded-pill severity"> <%= bug.severity %> </span> </h4>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+<div id="bugs-data" data="<%=JSON.stringify(project.bugs)%>"></div>
+<script src="/js/projectBugsListPage.js"></script>
